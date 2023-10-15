@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Book</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Book Store</h1>-->
+<!--<ul>-->
+<!--    {% for i in book_key %}-->
+<!--    <li>-->
+<!--        <h1>{{i.title}}</h1>-->
+<!--        <p><em>{{i.description}}</em></p>-->
+<!--        <img src="{{i.image.url}}" alt="book">-->
+<!--        <p><strong>{{i.cost}}</strong></p>-->
+<!--        <p>{{i.created_date}}</p>-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+<!--</body>-->
+<!--</html>-->
+
+{% include 'header.html' %}
+
+<br>
+<center><span class="badge text-bg-warning"><h1>Books of 2023</h1></span></center><br>
+<div class="flex">
+    {% for i in book_key %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{i.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{i.title}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <a href="/book_detail/{{i.id}}/" class="btn btn-primary">Подробнее</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include 'footer.html' %}
