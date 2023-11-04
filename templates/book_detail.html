@@ -5,14 +5,16 @@
     <title>Detail</title>
 </head>
 <body>
+<button><a href="/book_list/{{object.id}}/update/">Изменить</a></button>
+<button><a href="/book_list/{{object.id}}/delete/">Удалить</a></button>
 <h1>Детальная инфомация</h1>
-<h2>{{book_key.title}}</h2>
-<p>{{book_key.description}}</p>
-<img src="{{book_key.image.url}}" alt="book">
-<p>{{book_key.popularity}}</p>
-<iframe src="{{book_key.video}}" frameborder="0"></iframe>
-<p>{{book_key.cost}}</p>
-<p>{{book_key.created_date}}</p>
+<h2>{{object.title}}</h2>
+<p>{{object.description}}</p>
+<img src="{{object.image.url}}" alt="book">
+<p>{{object.popularity}}</p>
+<iframe src="{{object.video}}" frameborder="0"></iframe>
+<p>{{object.cost}}</p>
+<p>{{object.created_date}}</p>
 
 
 <table border="2">
@@ -20,7 +22,7 @@
         <th>Дата создания отзыва</th><th>Коммент</th><th>Оценка</th>
     </tr>
 
-    {% for i in book_key.review_object.all %}
+    {% for i in object.review_object.all %}
     <tr>
         <td>{{i.created_at}}</td>
         <td>{{i.text_review}}</td>

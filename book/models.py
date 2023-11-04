@@ -9,7 +9,7 @@ class Book(models.Model):
     )
     title = models.CharField(max_length=40)
     description = models.TextField()
-    image = models.ImageField(upload_to='')
+    image = models.FileField(upload_to='', null=True)
     popularity = models.CharField(max_length=100, choices=POPULARITY, default=POPULARITY[0], null=True)
     video = models.URLField(null=True)
     cost = models.CharField(max_length=10)
